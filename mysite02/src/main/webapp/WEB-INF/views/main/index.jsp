@@ -22,7 +22,7 @@
 		<div id="wrapper">
 			<div id="content">
 				<div id="site-introduction">
-					<img id="profile" width=100 src="<%=request.getContextPath()%>/assets/images/myimage.png">
+					<img id="profile" style="width:100px" src="<%=request.getContextPath()%>/assets/images/myimage.png">
 					<h2>안녕하세요. 강성호의  mysite에 오신 것을 환영합니다.</h2>
 					<p>
 						이 사이트는  웹 프로그램밍 실습과제 예제 사이트입니다.<br>
@@ -41,7 +41,7 @@
 			</ul>
 		</div>
 		<div id="footer">
-			<p>(c)opyright 2015, 2016, 2017, 2018</p>
+			<p>(c)opyright 2015, 2016, 2017, 2018, 2019, 2020</p>
 		</div>
 	</div>
 </body>
