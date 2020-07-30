@@ -1,0 +1,20 @@
+com.bit2020.mysite.controller
+ 		----- MainController
+ 		----- UserController
+ 
+ com.bit2020.mysite.repository
+ 		----- UserRepository
+ 	
+ com.bit2020.mysite.vo
+ 		----- UserVo
+ 		
+ com.bit2020.mvc.util
+ 		----- MVCUtil
+ 		
+ 	
+ 	context(문맥, 어떤(Application) 정보를 가지고 있는 컨테이너(톰캣)) 문맥 - 프로세스가 실행해야 하는 정보.
+ 	context = Applicatio
+ 	애플리케이션에 대한 정보, 컨테이너(톰캣)의 클래스(servlet, listenner,filter)들이 어떻게 실행되어야 하는 가에 대한 정보
+ 	
+ 	tomcat에서 context : 웹 어플리케이셔는 서블릿들이 구성하고 있다.
+ 	spring에서 context : 비즈니스 클래스(Service, Repository)들이 구성하고 있다.
