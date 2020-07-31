@@ -15,8 +15,28 @@ import com.bit2020.mvc.util.MVCUtil;
 public class MainController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	@Override
+	public void init() throws ServletException {
+		
+		// 1. 컨테이너에게 설정 파일(Bean 설정)의 path를 가져 오는 작업.
+		String configPath = getServletConfig().getInitParameter("config");
+		// 2. 컨테이너를 만든다. 		
+		// ApplicationContext ac = new WebXmlApplicationContext();
+		
+		System.out.println("init() called-" + configPath);
+		super.init();
+	}
+	
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		System.out.println("service() called...");
+		super.service(req, res);
+	}
+
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("doGet() called...");
+		
 		request.setCharacterEncoding("UTF-8");
 		
 		int visitCount = 0;
@@ -43,9 +63,17 @@ public class MainController extends HttpServlet {
 	}
 
 
+	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("doPost() called...");
 		doGet(request, response);
+	}
+	
+	@Override
+	public void destroy() {
+		System.out.println("destroy() called...");
+		super.destroy();
 	}
 
 }
