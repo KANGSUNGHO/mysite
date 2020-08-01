@@ -175,6 +175,46 @@ public class UserRepository {
 		}
 		return result;
 	}
-	
+	public boolean update(UserVo vo) {
+		boolean result = false;
+		Connection connection = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			// 1. 연결하기
+			connection = getConnection();
+
+			// 2. SQL 준비
+			String sql =
+			"update user set name=?,password=password(?) where no=?";
+			pstmt = connection.prepareStatement(sql);
+			
+			// 3. 바인딩(binding)
+			pstmt.setString(1,vo.getName());
+			pstmt.setString(2,vo.getPassword());
+			pstmt.setLong(3,vo.getNo());
+			
+			// 4. SQL 실행 
+			int count = pstmt.executeUpdate(); // 리턴값으로 인서트 개수가 나옴
+			result = (count == 1);
+
+
+		} catch (SQLException e) {
+			System.out.println("에러: " + e);
+		} finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+		
+	}
 	
 }
