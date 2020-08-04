@@ -8,6 +8,7 @@ import java.sql.SQLException;
 
 import org.springframework.stereotype.Repository;
 
+import com.bit2020.mysite.exception.UserRepositoryException;
 import com.bit2020.mysite.vo.UserVo;
 
 
@@ -41,6 +42,7 @@ public class UserRepository {
 
 		} catch (SQLException e) {
 			System.out.println("에러: " + e);
+			
 		} finally {
 			try {
 				if (connection != null) {
@@ -73,7 +75,8 @@ public class UserRepository {
 		
 		return connection;
 	}
-	public UserVo findByNo(Long no) {
+	
+	public UserVo findByNo(Long no) throws UserRepositoryException {
 		UserVo result = null;
 		Connection connection = null;
 		PreparedStatement pstmt = null;
@@ -108,7 +111,8 @@ public class UserRepository {
 			}
 
 		} catch (SQLException e) {
-			System.out.println("에러: " + e);
+//			System.out.println("에러: " + e);
+			throw new UserRepositoryException();
 		} finally {
 			try {
 				if (rs != null) {
@@ -161,6 +165,7 @@ public class UserRepository {
 
 		} catch (SQLException e) {
 			System.out.println("에러: " + e);
+			
 		} finally {
 			try {
 				if (rs != null) {
