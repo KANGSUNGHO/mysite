@@ -6,6 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.bit2020.mysite.exception.UserRepositoryException;
@@ -14,6 +17,8 @@ import com.bit2020.mysite.vo.UserVo;
 
 @Repository
 public class UserRepository {
+	@Autowired
+	private DataSource dataSource;
 	public boolean save(UserVo vo) {
 
 		boolean result = false;
@@ -22,7 +27,7 @@ public class UserRepository {
 		
 		try {
 			// 1. 연결하기
-			connection = getConnection();
+			connection = dataSource.getConnection();
 
 			// 2. SQL 준비
 			String sql =
@@ -83,7 +88,7 @@ public class UserRepository {
 		ResultSet rs  = null;
 		try {
 			// 1. 연결하기
-			connection = getConnection();
+			connection = dataSource.getConnection();
 
 			// 2. SQL 준비
 			String sql =
@@ -139,7 +144,7 @@ public class UserRepository {
 		ResultSet rs  = null;
 		try {
 			// 1. 연결하기
-			connection = getConnection();
+			connection = dataSource.getConnection();
 
 			// 2. SQL 준비
 			String sql =
@@ -190,7 +195,7 @@ public class UserRepository {
 		
 		try {
 			// 1. 연결하기
-			connection = getConnection();
+			connection = dataSource.getConnection();
 
 			// 2. SQL 준비
 			String sql =
