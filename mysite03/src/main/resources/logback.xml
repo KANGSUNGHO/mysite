@@ -11,7 +11,7 @@
 	</appender>
 
 	<appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>/log-mysite/exception.log</file>
+		<file>/Users/sungho/log-mysite/exception.log</file>
 		<encoder
 			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
 			<Pattern>
@@ -33,11 +33,12 @@
 	<!-- com.douzone.logex2 아래 패키지 로그들만 \logex\logex2.log 파일에만 출력하는 로거 -->
 	<logger name="com.bit2020.mysite.exception" level="error" additivity="false">
 		<appender-ref ref="fileAppender" />
+		<appender-ref ref="consoleAppender" />
 	</logger>
 
 
 	<!-- 루트(글로벌) 로거 -->
-	<root level="debug">
+	<root level="info">
 		<appender-ref ref="consoleAppender" />
 	</root>
 

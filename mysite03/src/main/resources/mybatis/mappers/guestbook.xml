@@ -7,4 +7,5 @@
 			select no, name, date_format(reg_date, '%Y-%m-%d %h:%i:%s'), message from guestbook order by reg_date desc
 		]]>
 	</select>
+	
 </mapper>

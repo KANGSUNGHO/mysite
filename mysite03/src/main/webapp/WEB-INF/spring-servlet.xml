@@ -17,6 +17,23 @@
 	<!-- 서블릿 컨테이너의 디폴트 서블릿 위임 핸들러 -->
 	<mvc:default-servlet-handler/>
 	
+	<!-- Interceptors  -->
+	<mvc:interceptors>
+<!-- 		<mvc:interceptor>
+			<mvc:mapping path="/guestbook/**"/>
+			<bean class="com.bit2020.mysite.interceptor.MyInterceptor02" />
+		</mvc:interceptor> -->
+		
+		<mvc:interceptor>
+			<mvc:mapping path="/user/auth"/>
+			<bean class="com.bit2020.mysite.security.LoginInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/user/logout"/>
+			<bean class="com.bit2020.mysite.security.LogoutInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
 	<!-- ViewResolver 설정 -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	   <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
