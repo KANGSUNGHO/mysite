@@ -16,13 +16,17 @@ public class UserService {
 		userRepository.save(userVo);
 	}
 
-	public UserVo getUser(String email, String password) {
-		return userRepository.findByEmailAndPassword(email, password);
+	public UserVo getUser(UserVo vo) {
+		return userRepository.findByEmailAndPassword(vo);
 	}
 
 	public UserVo getUser(Long no) {
 		UserVo userVo = userRepository.findByNo(no);
 		return userVo;
+	}
+	
+	public void upadteUser(UserVo vo) {
+		userRepository.update(vo);
 	}
 
 

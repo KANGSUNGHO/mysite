@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 import com.bit2020.mysite.service.UserService;
 import com.bit2020.mysite.vo.UserVo;
@@ -45,10 +45,9 @@ public class UserController {
 	public String login(
 			HttpSession session,
 			Model model,
-			@RequestParam(value= "email", required=true, defaultValue="")String email, 
-			@RequestParam(value= "password", required=true, defaultValue="")String password) {
+			UserVo vo) {
 		
-		UserVo authUser = userService.getUser(email,password);
+		UserVo authUser = userService.getUser(vo);
 		if(authUser == null) {
 			model.addAttribute("result", "fail");
 			return "user/login";
@@ -79,6 +78,15 @@ public class UserController {
 		return "user/update";
 	}
 	
+	@RequestMapping(value="/update", method=RequestMethod.POST)
+	public String update(HttpSession session, UserVo vo) {
+//		System.out.println(vo);
+		UserVo authUser = (UserVo)session.getAttribute("authUser");
+		vo.setNo(authUser.getNo());
+		userService.upadteUser(vo);
+		
+		return "redirect:/user/update";
+	}
 //	@ExceptionHandler(Exception.class)
 //	public String handlerException() {
 //		System.out.println("logging"); // 로깅
