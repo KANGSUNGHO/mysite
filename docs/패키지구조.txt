@@ -18,3 +18,35 @@ com.bit2020.mysite.controller
  	
  	tomcat에서 context : 웹 어플리케이셔는 서블릿들이 구성하고 있다.
  	spring에서 context : 비즈니스 클래스(Service, Repository)들이 구성하고 있다.
+ 	
+ 	===================================================================
+ 	
+ 	src/main/java
+	|----  com
+		|--- bit2020
+			|---- mysite
+				|---- controller
+				|		|--- UserController.java
+				|---- repository
+						|--- UserRepository.java
+				
+src/main/resources
+	|---- mybatis
+			|--- congiuration.xml
+ 
+
+ WEB-INF
+	|---- web.xml
+	|---- applcationContext.xml
+	|---- spring-servlet.xml
+	|---- classes
+			|---- com
+			|		|--- bit2020
+			|				|---- mysite
+			|						|---- controller
+			|						|		|--- UserController.class
+			|						|
+			|						|---- repository
+			|								|--- UserRepository.class
+			|---- mybatis
+					|--- congiuration.xml	
