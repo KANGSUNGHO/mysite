@@ -11,6 +11,38 @@
 <title>mysite</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link href="${pageContext.request.contextPath }/assets/css/mysite.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/jquery/jquery-1.9.0.js"></script>
+<script>
+/* var param = {
+		url : "/mysite03/json",
+		type : "get",
+		data: "",
+		dataType:"json",
+		success: function(){
+			
+		}
+}; */
+$.ajax({
+	url : "/mysite03/json",
+	type : "get",
+	data: "",
+	dataType:"json",
+	success: function(response){
+		console.log(response);
+	}
+});
+
+/* 	let o1 = {};
+	o1.name = "강성호";
+	o1.no = 10;
+	console.log(o1); */
+	
+/* 	let i2 = new Number(10);
+	let s2 = new String("hello")
+	let b2 = new Boolean(true);
+	let b2 = new Object();
+	console.log(i); */ //객체 생성 
+</script>
 </head>
 <body>
 	<div id="container">
