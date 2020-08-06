@@ -16,4 +16,14 @@ public class GuestbookService {
 	public List<GuestbookVo> getMessageList() {
 		return guestbookRepository.findAll();
 	}
+	
+	public boolean deleteMessage( GuestbookVo vo ){
+		return 1 == guestbookRepository.delete( vo );
+	}
+
+
+	public boolean writeMessage( GuestbookVo vo ) {
+		int count = guestbookRepository.save(vo);
+		return count == 1;
+	}
 }

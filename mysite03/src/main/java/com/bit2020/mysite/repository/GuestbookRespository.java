@@ -26,46 +26,15 @@ public class GuestbookRespository {
 		
 		return result;
 	}
-	
-	public boolean delete(Long no, String password) {
-		boolean result = false;
-		Connection connection = null;
-		PreparedStatement pstmt = null;
-		
-		try {
-			// 1. 연결하기
-			connection = getConnection();
-
-			// 2. SQL 준비
-			String sql = "delete from guestbook where no = ? and password = ?"; 
-			pstmt = connection.prepareStatement(sql);
+	public int delete( GuestbookVo vo ) {
 			
-			// 3. 바인딩(binding)
-			pstmt.setLong(1, no);
-			pstmt.setString(2, password);
-			
-			// 4. sql 실행	
-			int count = pstmt.executeUpdate();
-			result = (count == 1);
-			
-		} catch (SQLException e) {
-			System.out.println("에러:" + e);
-		} finally {
-			try {
-				if(pstmt != null) {
-					pstmt.close();
-				}
-				if(connection != null) {
-					connection.close();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		
-		return result;
-		
+		return sqlSession.delete( "guestbook.delete", vo );
 	}
+	
+	public int save( GuestbookVo vo ) {
+		return sqlSession.insert( "guestbook.save", vo );
+	}
+	
 	public boolean insert(GuestbookVo vo) {
 
 		boolean result = false;
