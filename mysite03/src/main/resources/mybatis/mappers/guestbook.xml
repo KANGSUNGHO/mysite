@@ -8,4 +8,20 @@
 		]]>
 	</select>
 	
+	<insert id="save" parameterType="guestbookvo">
+		<![CDATA[
+		 insert 
+		   into guestbook 
+		 values( null, #{name }, #{password }, #{message }, now() )
+		]]>
+	</insert>
+
+	<delete id="delete" parameterType="guestbookvo">
+		<![CDATA[
+		delete 
+		  from guestbook 
+		 where no = #{no } and password = #{password }
+		]]>	
+	</delete>
+	
 </mapper>
