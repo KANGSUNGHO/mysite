@@ -20,6 +20,12 @@
 		]]>
 	</select>
 	
+	<select id ="findByEmail" parameterType="string" resultType="uservo">
+		<![CDATA[
+			select no from user where email = #{email}
+		]]>
+	</select>
+	
 	<update id="update" parameterType="uservo">
 		<choose>
 			<when test='password != ""'><!-- 동적쿼리. 패스워드가 널이 아니면 아래문장 실행. 아니면 otherwise 실행  -->

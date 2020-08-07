@@ -29,5 +29,10 @@ public class UserService {
 		userRepository.update(vo);
 	}
 
+	public boolean existUser(String email) {
+		Object userVo = userRepository.findByEmail(email);
+		return userVo != null;
+	}
+
 
 }
