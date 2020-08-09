@@ -11,7 +11,7 @@
 <link href="${pageContext.request.contextPath }/assets/css/user.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/jquery/jquery-1.9.0.js"></script>
 <script>
-$(function(){
+/* $(function(){
 	$("#btn-email").click(function(){
 		let email = $("#email").val();
 		$.ajax({
@@ -23,6 +23,43 @@ $(function(){
 				console.log(response);
 			}});
 	});
+}); */
+$(function(){
+	$("#email").change(function(){
+		$("#img-email").hide();
+		$("#btn-email").show();
+	});
+	$("#btn-email").click(function(){
+		var email = $("#email").val();
+		if(email = ""){
+			return;
+		}
+		var url = "${pageContext.request.contextPath}/api/user/checkemail?email=" + email;
+		$.ajax({
+			url: url,
+			type : "get",
+			data : "",
+			dataType : "json",
+			success : function(response){
+				if(response.result == "fail"){
+					console.error(response.message);
+					return;
+				}
+				// 이메일이 존재하는 경우 
+				if(response.data == "ture"){
+					alert("이메일이 존재합니다. 다른 이메일을 선택해주세요.");
+					$("#email").val("");
+					$("#email").focus();
+					return;
+				}
+				$("#img-email").show();
+				$("#btn-email").hide();
+			},
+			error : function(XHR,status,e){
+				console.error(status + ":" + e);
+			}
+		})
+	})
 });
 </script>
 </head>
@@ -39,6 +76,7 @@ $(function(){
 
 					<label class="block-label" for="email">이메일</label>
 					<input id="email" name="email" type="text" value="">
+					<img id="img-email" src="${pageContext.request.contextPath }/assets/images/check.png" style="display:none; width:32px; vertical-align:middle">
 					<input id="btn-email" type="button" value="이메일 중복확인">
 					
 					<label class="block-label">패스워드</label>
