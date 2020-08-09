@@ -40,7 +40,7 @@ public class UserController {
 	
 	@RequestMapping(value="/join", method=RequestMethod.POST)
 	public String join(UserVo userVo) {
-		userService.join(userVo);
+		userService.join(userVo); // 서비스에는 비즈니스 용어를 씀. 
 		return "redirect:/user/joinsuccess";
 	}
 	
@@ -67,7 +67,7 @@ public class UserController {
 //			return "user/login";
 //		}
 //		
-//		/* 인증 처리 */
+//		/* 인증 처리 */ // 기술을 넣어야함. 
 //		session.setAttribute("authUser", authUser);
 //		
 //		return "redirect:/";
@@ -103,10 +103,10 @@ public class UserController {
 		
 		return "redirect:/user/update";
 	}
-//	@ExceptionHandler(Exception.class)
+//	@ExceptionHandler(Exception.class) //Exception.class 는 Exception의 부모임. 
 //	public String handlerException() {
-//		System.out.println("logging"); // 로깅
-//		return "error/exception";  // 사과 페이지 
+//		System.out.println("logging"); // 1. 로깅
+//		return "error/exception";  	   // 2. 사과 페이지 
 //		
 //	}
 	
