@@ -1,26 +1,27 @@
 # Spring 진도   
-* 01. Spring 개념
-* 02. Spring MVC 기본 Annotation 연습
-* 03. DefaultServlet Handler
-* 04. View Resolver
-* 05. Exception Handler
+  01. Spring 개념
+  02. Spring MVC 기본 Annotation 연습
+  03. DefaultServlet Handler
+  04. View Resolver
+  05. Exception Handler
 
-* 06. MyBatis
-* 07. Logging
-* 08. Intecetor & Annotaion
-* 09. MultipartResolver
-* 11. Validation
-* 12. AOP
-* 13. Spring Container
+  06. MyBatis
+  07. Logging
+  08. Intecetor & Annotaion
+  09. MultipartResolver
+  11. Validation
+  12. AOP
+  13. Spring Container
 
-* 14. Java Config(MySite04, MySite05)
-* 15. Spring Boot(MySite06)
+  14. Java Config(MySite04, MySite05)
+  15. Spring Boot(MySite06)
 
+<hr/> 
 
 * Spring MVC   -> 서비스 웹페이지 [온프레미스(On-premise)] 
 * Spring Boot  -> [서비스 웹페이지, API 서버][도커, 컨테이너, Cloud, DevOps]
 
-<hr/>
+# 
 
 # 스프링 프로젝트 만드는 방법
 ## 01. Mysite 프로젝트에 mystite03 모듈 생성

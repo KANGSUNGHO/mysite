@@ -21,14 +21,14 @@ com.bit2020.mysite.controller
  	
  	===================================================================
  	
- 	src/main/java
+ src/main/java
 	|----  com
-		|--- bit2020
-			|---- mysite
-				|---- controller
-				|		|--- UserController.java
-				|---- repository
-						|--- UserRepository.java
+			|--- bit2020
+			    	|---- mysite
+							|---- controller
+							|		|--- UserController.java
+							|---- repository
+									|--- UserRepository.java
 				
 src/main/resources
 	|---- mybatis
