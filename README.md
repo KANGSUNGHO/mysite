@@ -18,8 +18,8 @@
 
 <hr/> 
 
-* Spring MVC   -> 서비스 웹페이지 [온프레미스(On-premise)] 
-* Spring Boot  -> [서비스 웹페이지, API 서버][도커, 컨테이너, Cloud, DevOps]
+* Spring MVC   -> 서비스 웹페이지 (온프레미스(On-premise))
+* Spring Boot  -> (서비스 웹페이지, API 서버)(도커, 컨테이너, Cloud, DevOps)
 
 # 
 
