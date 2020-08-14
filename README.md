@@ -1,11 +1,11 @@
 # 메인
-<img width="702" alt="스크린샷 2020-08-15 오전 2 11 50" src="https://user-images.githubusercontent.com/48710171/90275116-bcade980-de9c-11ea-99f0-107af5de6475.png">
+<img width="703" alt="스크린샷 2020-08-15 오전 2 45 06" src="https://user-images.githubusercontent.com/48710171/90277870-56779580-dea1-11ea-9ba1-bd5b203703e7.png">
 
 # 방명록
-<img width="699" alt="스크린샷 2020-08-15 오전 2 09 11" src="https://user-images.githubusercontent.com/48710171/90274971-7c4e6b80-de9c-11ea-851b-8074c5512280.png">
+<img width="701" alt="스크린샷 2020-08-15 오전 2 46 11" src="https://user-images.githubusercontent.com/48710171/90277939-7e66f900-dea1-11ea-940a-d65ebccd30a7.png">
 
 # 게시판
-<img width="703" alt="스크린샷 2020-08-15 오전 2 14 22" src="https://user-images.githubusercontent.com/48710171/90275327-0eef0a80-de9d-11ea-8240-0738ae2a6f95.png">
+<img width="703" alt="스크린샷 2020-08-15 오전 2 46 45" src="https://user-images.githubusercontent.com/48710171/90278008-9f2f4e80-dea1-11ea-8960-a5596ed21738.png">
 
 # 
 
