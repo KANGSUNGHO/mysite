@@ -25,7 +25,7 @@
 - Google Chrome 브라우저에서 개발 및 테스트
 
 ## :ox: Copyright
-- 
+- [참고한 깃허브](https://github.com/gachon-bitacademy/mysite)
 
 # 
 
