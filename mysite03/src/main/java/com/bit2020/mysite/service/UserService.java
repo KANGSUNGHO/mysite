@@ -31,6 +31,7 @@ public class UserService {
 
 	public boolean existUser(String email) {
 		Object userVo = userRepository.findByEmail(email);
+//		System.out.println(userVo);
 		return userVo != null;
 	}
 

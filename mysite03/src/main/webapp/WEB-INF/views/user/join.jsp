@@ -31,10 +31,12 @@ $(function(){
 	});
 	$("#btn-email").click(function(){
 		var email = $("#email").val();
-		if(email = ""){
+/* 		console.log(email); */
+		if(email == ""){
 			return;
 		}
 		var url = "${pageContext.request.contextPath}/api/user/checkemail?email=" + email;
+		/* console.log(url); */
 		$.ajax({
 			url: url,
 			type : "get",
@@ -46,7 +48,8 @@ $(function(){
 					return;
 				}
 				// 이메일이 존재하는 경우 
-				if(response.data == "ture"){
+				/* console.log(response.data) */
+				if(response.data == true){
 					alert("이메일이 존재합니다. 다른 이메일을 선택해주세요.");
 					$("#email").val("");
 					$("#email").focus();
