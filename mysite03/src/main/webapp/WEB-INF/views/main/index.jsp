@@ -53,15 +53,15 @@ $.ajax({
 					<img id="profile" style="width:200px" src="${pageContext.request.contextPath }/assets/images/myimage2.png">
 							<h2>안녕하세요.</h2> <br>
 							<c:choose>
-							<c:when test='${not empty authUser }'>
-								<h2>${authUser.name }의 MySite에 오신 것을 환영합니다.</h2><br>
-							</c:when>
-							<c:otherwise>
-								<br>
-							</c:otherwise>
+								<c:when test='${not empty authUser }'>
+									<h2>${authUser.name }의 MySite에 오신 것을 환영합니다.</h2><br>
+								</c:when>
+								<c:otherwise>
+									<br>
+								</c:otherwise>
 							</c:choose>						
-					<p><br><hr>
-					
+					<br><hr>
+					<p>
 						이 사이트는 스프링으로 만들었습니다.<br>
 						메뉴는  사이트 소개, 방명록, 게시판이 있습니다.<br><br>
 						<a href="${pageContext.request.contextPath }/guestbook">방명록</a>에 글 남기기<br>
