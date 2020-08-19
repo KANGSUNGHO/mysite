@@ -12,7 +12,7 @@
 				<c:choose>
 					<c:when test='${not empty authUser }'>
 						<li><a href="${pageContext.request.contextPath }/user/update">회원정보수정</a><li>
-						<li><a href="<%=request.getContextPath() %>/user/logout">로그아웃</a><li>
+						<li><a href="${pageContext.request.contextPath }/user/logout">로그아웃</a><li>
 						<li>${authUser.name }님 안녕하세요 ^^;</li>	
 					</c:when>
 					<c:otherwise>
