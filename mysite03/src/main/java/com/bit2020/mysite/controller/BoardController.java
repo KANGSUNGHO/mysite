@@ -32,7 +32,6 @@ public class BoardController {
 		
 		Map<String, Object> map = boardService.getMessageList( page, keyword );
 		model.addAttribute("map", map);
-		System.out.println("들어옴8 ");
 		
 		return "board/list";
 	}

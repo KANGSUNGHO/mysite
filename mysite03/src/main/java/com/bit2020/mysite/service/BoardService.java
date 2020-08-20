@@ -49,12 +49,15 @@ public class BoardService {
 	}
 	
 	public Map<String, Object> getMessageList( int currentPage, String keyword ){
-		System.out.println("들어옴1 ");
 		//1. 페이징을 위한 기본 데이터 계산
 		int totalCount = boardRepository.getTotalCount( keyword ); 
-		int pageCount = (int)Math.ceil( (double)totalCount / LIST_SIZE );
+		System.out.println("totalCount: " + totalCount);
+		int pageCount = (int)Math.ceil( (double)totalCount / LIST_SIZE ); // Math.ceil은 소수점 이하를 올림 
+		System.out.println("pageCount: " + pageCount);
 		int blockCount = (int)Math.ceil( (double)pageCount / PAGE_SIZE );
+		System.out.println("blockCount: " + blockCount);
 		int currentBlock = (int)Math.ceil( (double)currentPage / PAGE_SIZE );
+		System.out.println("currentBlock: " + currentBlock);
 		
 		//2. 파라미터 page 값  검증
 		if( currentPage > pageCount ) {
@@ -72,11 +75,10 @@ public class BoardService {
 		int prevPage = ( currentBlock > 1 ) ? ( currentBlock - 1 ) * PAGE_SIZE : 0;
 		int nextPage = ( currentBlock < blockCount ) ? currentBlock * PAGE_SIZE + 1 : 0;
 		int endPage = ( nextPage > 0 ) ? ( beginPage - 1 ) + LIST_SIZE : pageCount;
-		System.out.println("들어옴2 ");
+		
 		//4. 리스트 가져오기
 		List<BoardVo> list = boardRepository.getList( keyword, currentPage, LIST_SIZE );
-		
-		System.out.println("들어옴3 ");
+	
 		//5. 리스트 정보를 맵에 저장
 		Map<String, Object> map = new HashMap<String, Object>();
 		
@@ -89,7 +91,7 @@ public class BoardService {
 		map.put( "prevPage", prevPage );
 		map.put( "nextPage", nextPage );
 		map.put( "keyword", keyword );
-		System.out.println("들어옴4 ");
+		
 		return map;
 	}
 		

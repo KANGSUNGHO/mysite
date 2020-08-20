@@ -86,7 +86,7 @@
 	
 	<select id="getByNo" resultType="boardvo" parameterType="long">
 		<![CDATA[
-			select no, title, content, group_no as grupuNo, order_no as orderNo, depth, user_no as userNo
+			select no, title, content, group_no as groupNo, order_no as orderNo, depth, user_no as userNo
 				from board
 			where no = #{no}
 		]]>
